@@ -44,7 +44,7 @@ impl<'a> PrimaryHeader<'a> {
                 FITSHeaderKeyword::Comment(_) => "COMMENT",
                 FITSHeaderKeyword::History(_) => "HISTORY",
                 FITSHeaderKeyword::Other { name, .. } => {
-                    std::str::from_utf8(name)?
+                    std::str::from_utf8(dbg!(name))?
                 },
                 FITSHeaderKeyword::End => {
                     end = true;

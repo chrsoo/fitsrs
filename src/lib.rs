@@ -309,6 +309,17 @@ mod tests {
     }
 
     #[test]
+    fn test_fits_tile_china_vo_moon() {
+        use std::fs::File;
+
+        let mut f = File::open("misc/Npix11.fits").unwrap();
+        let mut buf = Vec::new();
+        f.read_to_end(&mut buf).unwrap();
+
+        let _fits = Fits::from_byte_slice(&buf[..]).unwrap();
+    }
+
+    #[test]
     fn test_fits_tile7() {
         use std::fs::File;
 
